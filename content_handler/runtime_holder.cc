@@ -562,9 +562,8 @@ void RuntimeHolder::OnInvalidation(mozart::ViewInvalidationPtr invalidation,
         view_properties_->view_layout->size->width;
     viewport_metrics_.physical_height =
         view_properties_->view_layout->size->height;
-    viewport_metrics_.device_pixel_ratio = 2.0;
-    // TODO(abarth): Use view_properties_->display_metrics->device_pixel_ratio
-    // once that's reasonable.
+    viewport_metrics_.device_pixel_ratio =
+        view_properties_->display_metrics->device_pixel_ratio;
     runtime_->SetViewportMetrics(viewport_metrics_);
   }
 
